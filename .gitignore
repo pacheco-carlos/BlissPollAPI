@@ -1,0 +1,106 @@
+.project
+*.orig
+*.suo
+obj/*
+*/obj/*
+_*/*
+*/_*/*
+App_Data/*
+*/App_Data/*
+*.user
+*.testsettings
+*.ncrunchsolution
+*/bin/*
+*/obj/*
+*/*/bin/*/*
+*/*/obj/*/*
+*/*/bin/*/*
+
+# Arquivos gerados na migra��o do Visual Studio 2015
+[Bb]ackup/
+[Bb]ackup1/
+UpgradeLog*
+applicationhost.config
+
+#OS junk files
+[Tt]humbs.db
+*.DS_Store
+
+#Visual Studio files
+*.[Oo]bj
+*.user
+*.aps
+*.pch
+*.vspscc
+*.vssscc
+*_i.c
+*_p.c
+*.ncb
+*.suo
+*.tlb
+*.tlh
+*.bak
+*.[Cc]ache
+*.ilk
+*.log
+*.lib
+*.sbr
+*.sdf
+*.opensdf
+*.unsuccessfulbuild
+ipch/
+obj/
+[Bb]in
+[Dd]ebug*/
+[Rr]elease*/
+Ankh.NoLoad
+
+#MonoDevelop
+*.pidb
+*.userprefs
+
+#Tooling
+_ReSharper*/
+*.resharper
+[Tt]est[Rr]esult*
+*.sass-cache
+
+#Project files
+[Bb]uild/
+
+#Subversion files
+.svn
+
+# Office Temp Files
+~$*
+
+# Ignore NuGet Packages
+*.nupkg
+# Ignore the packages folder
+/packages
+**/packages/*
+# except build/, which is used as an MSBuild target.
+!**/packages/build/
+# Uncomment if necessary however generally it will be regenerated when needed
+#!**/packages/repositories.config
+
+#ncrunch
+*ncrunch*
+*crunch*.local.xml
+
+# visual studio database projects
+*.dbmdl
+
+#Test files
+*.testsettings
+
+*.orig
+
+*/OpenCover/*
+
+*.tmp
+/.project
+/.vs
+
+*.ide
+*.ide-journal
