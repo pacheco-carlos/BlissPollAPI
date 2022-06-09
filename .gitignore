@@ -33,6 +33,8 @@ applicationhost.config
 *.pch
 *.vspscc
 *.vssscc
+*.vsidx
+*.v2
 *_i.c
 *_p.c
 *.ncb
@@ -77,8 +79,8 @@ _ReSharper*/
 # Ignore NuGet Packages
 *.nupkg
 # Ignore the packages folder
-/packages
-**/packages/*
+#/packages
+#**/packages/*
 # except build/, which is used as an MSBuild target.
 !**/packages/build/
 # Uncomment if necessary however generally it will be regenerated when needed
