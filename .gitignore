@@ -1,6 +1,8 @@
 .project
 *.orig
 *.suo
+*/*.suo
+*/*.v2
 obj/*
 */obj/*
 _*/*
