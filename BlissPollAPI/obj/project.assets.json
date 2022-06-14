@@ -331,20 +331,20 @@
           "lib/netstandard2.0/_._": {}
         }
       },
-      "Microsoft.EntityFrameworkCore.Design/6.0.5": {
+      "Microsoft.EntityFrameworkCore.Design/6.0.0": {
         "type": "package",
         "dependencies": {
           "Humanizer.Core": "2.8.26",
-          "Microsoft.EntityFrameworkCore.Relational": "6.0.5"
+          "Microsoft.EntityFrameworkCore.Relational": "6.0.0"
         },
         "compile": {
-          "lib/net6.0/_._": {}
+          "lib/net6.0/Microsoft.EntityFrameworkCore.Design.dll": {}
         },
         "runtime": {
           "lib/net6.0/Microsoft.EntityFrameworkCore.Design.dll": {}
         },
         "build": {
-          "build/net6.0/Microsoft.EntityFrameworkCore.Design.props": {}
+          "build/net6.0/_._": {}
         }
       },
       "Microsoft.EntityFrameworkCore.InMemory/6.0.2": {
@@ -1747,6 +1747,47 @@
         "runtime": {
           "lib/netstandard2.1/YamlDotNet.dll": {}
         }
+      },
+      "Entities/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/Entities.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Entities.dll": {}
+        }
+      },
+      "Repository/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "Entities": "1.0.0",
+          "Microsoft.EntityFrameworkCore": "6.0.5",
+          "Microsoft.EntityFrameworkCore.SqlServer": "6.0.5"
+        },
+        "compile": {
+          "bin/placeholder/Repository.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Repository.dll": {}
+        }
+      },
+      "Services/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "Entities": "1.0.0",
+          "MailKit": "3.2.0",
+          "Microsoft.Extensions.Configuration.Abstractions": "6.0.0",
+          "MimeKit": "3.2.0"
+        },
+        "compile": {
+          "bin/placeholder/Services.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Services.dll": {}
+        }
       }
     }
   },
@@ -2240,10 +2281,10 @@
         "microsoft.entityframeworkcore.analyzers.nuspec"
       ]
     },
-    "Microsoft.EntityFrameworkCore.Design/6.0.5": {
-      "sha512": "zNjMWJ6MJ/Qm7S6wFBqVgn7DEpilbDMy0xgA7c4Y1yY9/LoaC2pWwWO4ePaYoPCZpLx/eTViWEr5ZXta/vK//Q==",
+    "Microsoft.EntityFrameworkCore.Design/6.0.0": {
+      "sha512": "RFdomymyuPNffl+VPk7osdxCJQ0xlGuxr28ifdfFFNUaMK0OYiJOjr6w9z3kscOM2p2gdPWNI1IFUXllEyphow==",
       "type": "package",
-      "path": "microsoft.entityframeworkcore.design/6.0.5",
+      "path": "microsoft.entityframeworkcore.design/6.0.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -2251,7 +2292,7 @@
         "build/net6.0/Microsoft.EntityFrameworkCore.Design.props",
         "lib/net6.0/Microsoft.EntityFrameworkCore.Design.dll",
         "lib/net6.0/Microsoft.EntityFrameworkCore.Design.xml",
-        "microsoft.entityframeworkcore.design.6.0.5.nupkg.sha512",
+        "microsoft.entityframeworkcore.design.6.0.0.nupkg.sha512",
         "microsoft.entityframeworkcore.design.nuspec"
       ]
     },
@@ -5797,6 +5838,21 @@
         "yamldotnet.8.1.2.nupkg.sha512",
         "yamldotnet.nuspec"
       ]
+    },
+    "Entities/1.0.0": {
+      "type": "project",
+      "path": "../Entities/Entities.csproj",
+      "msbuildProject": "../Entities/Entities.csproj"
+    },
+    "Repository/1.0.0": {
+      "type": "project",
+      "path": "../Repository/Repository.csproj",
+      "msbuildProject": "../Repository/Repository.csproj"
+    },
+    "Services/1.0.0": {
+      "type": "project",
+      "path": "../Services/Services.csproj",
+      "msbuildProject": "../Services/Services.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -5805,10 +5861,8 @@
       "AspNetCore.HealthChecks.UI >= 6.0.4",
       "AspNetCore.HealthChecks.UI.Client >= 6.0.4",
       "AspNetCore.HealthChecks.UI.InMemory.Storage >= 6.0.4",
-      "MailKit >= 3.2.0",
-      "Microsoft.EntityFrameworkCore >= 6.0.5",
-      "Microsoft.EntityFrameworkCore.Design >= 6.0.5",
-      "Microsoft.EntityFrameworkCore.SqlServer >= 6.0.5",
+      "Repository >= 1.0.0",
+      "Services >= 1.0.0",
       "Swashbuckle.AspNetCore >= 6.3.1"
     ]
   },
@@ -5838,7 +5892,14 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\Pacheco\\source\\repos\\BlissPollAPI\\Repository\\Repository.csproj": {
+              "projectPath": "C:\\Users\\Pacheco\\source\\repos\\BlissPollAPI\\Repository\\Repository.csproj"
+            },
+            "C:\\Users\\Pacheco\\source\\repos\\BlissPollAPI\\Services\\Services.csproj": {
+              "projectPath": "C:\\Users\\Pacheco\\source\\repos\\BlissPollAPI\\Services\\Services.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
@@ -5866,24 +5927,6 @@
           "AspNetCore.HealthChecks.UI.InMemory.Storage": {
             "target": "Package",
             "version": "[6.0.4, )"
-          },
-          "MailKit": {
-            "target": "Package",
-            "version": "[3.2.0, )"
-          },
-          "Microsoft.EntityFrameworkCore": {
-            "target": "Package",
-            "version": "[6.0.5, )"
-          },
-          "Microsoft.EntityFrameworkCore.Design": {
-            "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
-            "suppressParent": "All",
-            "target": "Package",
-            "version": "[6.0.5, )"
-          },
-          "Microsoft.EntityFrameworkCore.SqlServer": {
-            "target": "Package",
-            "version": "[6.0.5, )"
           },
           "Swashbuckle.AspNetCore": {
             "target": "Package",

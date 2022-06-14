@@ -1,4 +1,4 @@
-﻿using BlissPollAPI.Model;
+﻿using BlissPollAPI.Entities.Models;
 
 namespace BlissPollAPI.Services.EmailService
 {

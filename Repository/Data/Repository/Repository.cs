@@ -1,4 +1,6 @@
-﻿using BlissPollAPI.Interfaces;
+﻿using BlissPollAPI.Repository;
+using BlissPollAPI.Repository.Interfaces;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Win32.SafeHandles;
 using System.Runtime.InteropServices;
 

@@ -1,5 +1,7 @@
-﻿using MailKit.Net.Smtp;
+﻿using BlissPollAPI.Entities.Models;
+using MailKit.Net.Smtp;
 using MailKit.Security;
+using Microsoft.Extensions.Configuration;
 using MimeKit;
 using MimeKit.Text;
 

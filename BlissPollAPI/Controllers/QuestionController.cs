@@ -1,6 +1,5 @@
-﻿using BlissPollAPI.Interfaces;
-using BlissPollAPI.Model;
-using Microsoft.AspNetCore.Http;
+﻿using BlissPollAPI.Entities.Models;
+using BlissPollAPI.Repository.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BlissPollAPI.Controllers
@@ -18,40 +17,23 @@ namespace BlissPollAPI.Controllers
 			_choicesRepository = choicesRepository;
 		}
 
-		[HttpGet("listall/{page}")]
-		public async Task<ActionResult<List<Poll>>> GetPolls(int page)
+		[HttpGet]
+		public async Task<ActionResult<List<Poll>>> GetPolls([FromQuery] QuestionParameters questionParameters)
 		{
-			var allPolls = await _pollRepository.GetPolls();
+			var polls = await _pollRepository.GetPolls(questionParameters);
 
-			if (allPolls.Count() == 0)
-				return NotFound();
-
-			var pageResults = 10f;
-			var pageCount = Math.Ceiling(allPolls.Count() / pageResults);
-
-			var pollsResponse = allPolls.
-				Skip((page - 1) * (int)pageResults)
-				.Take((int)pageResults)
-				.ToList();
-
-			var response = new PollResponse
-			{
-				Polls = pollsResponse,
-				CurrentPage = page,
-				Pages = (int)pageCount
-			};
-
-			return Ok(response);
+			return Ok(polls);
 		}
 
 		[HttpGet("{id}")]
-		public async Task<ActionResult<Poll>> Get(int id)
+		public async Task<ActionResult<Poll>> GetById(int id)
 		{
 			var poll = await _pollRepository.Get(id);
-			poll.Choices = await _choicesRepository.GetAllByPoll(poll.Id);
-
+			
 			if (poll == null)
 				return BadRequest("Poll not found.");
+
+			poll.Choices = await _choicesRepository.GetAllByPoll(poll.Id);
 
 			return Ok(poll);
 		}
