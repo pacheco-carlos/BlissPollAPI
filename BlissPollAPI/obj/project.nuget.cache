@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "0jOWjUsxHXpF8hHpsmJ222v5JeY+aaPKYvGdtIsGZOKW5vwiI5h4hXeZWj25KROxiR4lEva0VytDADi7sNNJMA==",
+  "dgSpecHash": "wyue63cTagKngvwQ3x2roSDQKd0r4YzjYmQT+Rq5NL1JSTrX5cL6sPmzcv9DPcjC5RGetcQnAkxV4bxDvBS4kA==",
   "success": true,
   "projectFilePath": "C:\\Users\\Pacheco\\source\\repos\\BlissPollAPI\\BlissPollAPI\\BlissPollAPI.csproj",
   "expectedPackageFiles": [
@@ -26,7 +26,7 @@
     "C:\\Users\\Pacheco\\.nuget\\packages\\microsoft.entityframeworkcore\\6.0.5\\microsoft.entityframeworkcore.6.0.5.nupkg.sha512",
     "C:\\Users\\Pacheco\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\6.0.5\\microsoft.entityframeworkcore.abstractions.6.0.5.nupkg.sha512",
     "C:\\Users\\Pacheco\\.nuget\\packages\\microsoft.entityframeworkcore.analyzers\\6.0.5\\microsoft.entityframeworkcore.analyzers.6.0.5.nupkg.sha512",
-    "C:\\Users\\Pacheco\\.nuget\\packages\\microsoft.entityframeworkcore.design\\6.0.5\\microsoft.entityframeworkcore.design.6.0.5.nupkg.sha512",
+    "C:\\Users\\Pacheco\\.nuget\\packages\\microsoft.entityframeworkcore.design\\6.0.0\\microsoft.entityframeworkcore.design.6.0.0.nupkg.sha512",
     "C:\\Users\\Pacheco\\.nuget\\packages\\microsoft.entityframeworkcore.inmemory\\6.0.2\\microsoft.entityframeworkcore.inmemory.6.0.2.nupkg.sha512",
     "C:\\Users\\Pacheco\\.nuget\\packages\\microsoft.entityframeworkcore.relational\\6.0.5\\microsoft.entityframeworkcore.relational.6.0.5.nupkg.sha512",
     "C:\\Users\\Pacheco\\.nuget\\packages\\microsoft.entityframeworkcore.relational.design\\2.0.0-preview1-final\\microsoft.entityframeworkcore.relational.design.2.0.0-preview1-final.nupkg.sha512",

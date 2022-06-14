@@ -1,4 +1,4 @@
-﻿namespace BlissPollAPI.Interfaces
+﻿namespace BlissPollAPI.Repository.Interfaces
 {
 	public interface IRepository<T> where T : class
 	{

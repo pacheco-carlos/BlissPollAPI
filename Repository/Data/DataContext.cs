@@ -1,7 +1,7 @@
-﻿using BlissPollAPI.Model;
+﻿using BlissPollAPI.Entities.Models;
 using Microsoft.EntityFrameworkCore;
 
-namespace BlissPollAPI.Data
+namespace BlissPollAPI.Repository
 {
 	public class DataContext : DbContext
 	{

@@ -1,5 +1,7 @@
-﻿using BlissPollAPI.Interfaces;
-using BlissPollAPI.Model;
+﻿using BlissPollAPI.Entities.Models;
+using BlissPollAPI.Repository;
+using BlissPollAPI.Repository.Interfaces;
+using Microsoft.EntityFrameworkCore;
 
 namespace BlissPollAPI.Data.Repository
 {

@@ -12,10 +12,8 @@
           "AspNetCore.HealthChecks.UI": "6.0.4",
           "AspNetCore.HealthChecks.UI.Client": "6.0.4",
           "AspNetCore.HealthChecks.UI.InMemory.Storage": "6.0.4",
-          "MailKit": "3.2.0",
-          "Microsoft.EntityFrameworkCore": "6.0.5",
-          "Microsoft.EntityFrameworkCore.Design": "6.0.5",
-          "Microsoft.EntityFrameworkCore.SqlServer": "6.0.5",
+          "Repository": "1.0.0",
+          "Services": "1.0.0",
           "Swashbuckle.AspNetCore": "6.3.1"
         },
         "runtime": {
@@ -39,7 +37,7 @@
           "AspNetCore.HealthChecks.UI.Core": "6.0.4",
           "KubernetesClient": "4.0.26",
           "Microsoft.EntityFrameworkCore": "6.0.5",
-          "Microsoft.EntityFrameworkCore.Design": "6.0.5",
+          "Microsoft.EntityFrameworkCore.Design": "6.0.0",
           "Microsoft.EntityFrameworkCore.Sqlite": "6.0.2",
           "Microsoft.EntityFrameworkCore.Sqlite.Design": "2.0.0-preview1-final",
           "Microsoft.Extensions.Http": "6.0.0",
@@ -317,15 +315,15 @@
         }
       },
       "Microsoft.EntityFrameworkCore.Analyzers/6.0.5": {},
-      "Microsoft.EntityFrameworkCore.Design/6.0.5": {
+      "Microsoft.EntityFrameworkCore.Design/6.0.0": {
         "dependencies": {
           "Humanizer.Core": "2.8.26",
           "Microsoft.EntityFrameworkCore.Relational": "6.0.5"
         },
         "runtime": {
           "lib/net6.0/Microsoft.EntityFrameworkCore.Design.dll": {
-            "assemblyVersion": "6.0.5.0",
-            "fileVersion": "6.0.522.21804"
+            "assemblyVersion": "6.0.0.0",
+            "fileVersion": "6.0.21.52301"
           }
         }
       },
@@ -1210,6 +1208,32 @@
             "fileVersion": "8.1.2.0"
           }
         }
+      },
+      "Entities/1.0.0": {
+        "runtime": {
+          "Entities.dll": {}
+        }
+      },
+      "Repository/1.0.0": {
+        "dependencies": {
+          "Entities": "1.0.0",
+          "Microsoft.EntityFrameworkCore": "6.0.5",
+          "Microsoft.EntityFrameworkCore.SqlServer": "6.0.5"
+        },
+        "runtime": {
+          "Repository.dll": {}
+        }
+      },
+      "Services/1.0.0": {
+        "dependencies": {
+          "Entities": "1.0.0",
+          "MailKit": "3.2.0",
+          "Microsoft.Extensions.Configuration.Abstractions": "6.0.0",
+          "MimeKit": "3.2.0"
+        },
+        "runtime": {
+          "Services.dll": {}
+        }
       }
     }
   },
@@ -1373,12 +1397,12 @@
       "path": "microsoft.entityframeworkcore.analyzers/6.0.5",
       "hashPath": "microsoft.entityframeworkcore.analyzers.6.0.5.nupkg.sha512"
     },
-    "Microsoft.EntityFrameworkCore.Design/6.0.5": {
+    "Microsoft.EntityFrameworkCore.Design/6.0.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-zNjMWJ6MJ/Qm7S6wFBqVgn7DEpilbDMy0xgA7c4Y1yY9/LoaC2pWwWO4ePaYoPCZpLx/eTViWEr5ZXta/vK//Q==",
-      "path": "microsoft.entityframeworkcore.design/6.0.5",
-      "hashPath": "microsoft.entityframeworkcore.design.6.0.5.nupkg.sha512"
+      "sha512": "sha512-RFdomymyuPNffl+VPk7osdxCJQ0xlGuxr28ifdfFFNUaMK0OYiJOjr6w9z3kscOM2p2gdPWNI1IFUXllEyphow==",
+      "path": "microsoft.entityframeworkcore.design/6.0.0",
+      "hashPath": "microsoft.entityframeworkcore.design.6.0.0.nupkg.sha512"
     },
     "Microsoft.EntityFrameworkCore.InMemory/6.0.2": {
       "type": "package",
@@ -2072,6 +2096,21 @@
       "sha512": "sha512-GlPKbb4l+91dyYVKV7UnJlr2CWooNNM1ayZWC90QAmlFPgbwSkfhgId7dGjTAHqkB84BZqjMSy5PlAYf1iejVA==",
       "path": "yamldotnet/8.1.2",
       "hashPath": "yamldotnet.8.1.2.nupkg.sha512"
+    },
+    "Entities/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Repository/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Services/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
     }
   }
 }

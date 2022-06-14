@@ -1,9 +1,5 @@
-﻿using MailKit.Net.Smtp;
-using MailKit.Security;
-using Microsoft.AspNetCore.Http;
+﻿using BlissPollAPI.Entities.Models;
 using Microsoft.AspNetCore.Mvc;
-using MimeKit;
-using MimeKit.Text;
 
 namespace BlissPollAPI.Controllers
 {

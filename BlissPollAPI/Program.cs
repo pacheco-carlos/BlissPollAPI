@@ -1,37 +1,28 @@
-global using BlissPollAPI.Data;
-global using Microsoft.EntityFrameworkCore;
 global using BlissPollAPI.Data.Repository;
-global using BlissPollAPI.Interfaces;
 global using BlissPollAPI.Services.EmailService;
-global using BlissPollAPI.Model;
 global using HealthChecks.UI.Client;
 global using Microsoft.AspNetCore.Diagnostics.HealthChecks;
+global using Microsoft.EntityFrameworkCore;
 global using System.Text.Json.Serialization;
+using BlissPollAPI.Extensions;
+using Microsoft.AspNetCore.HttpOverrides;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
-builder.Services.AddControllers()
-	.AddJsonOptions(o => o.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.Preserve);
+builder.Services.ConfigureCors();
+builder.Services.ConfigureControllers();
+builder.Services.ConfigureDBContext(builder.Configuration);
 
-builder.Services.AddDbContext<DataContext>(options =>
-{
-	options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
-});
-
-builder.Services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
-builder.Services.AddScoped<IPollRepository, PollRepository>();
-builder.Services.AddScoped<IChoicesRepository, ChoicesRepository>();
-builder.Services.AddScoped<IEmailService, EmailService>();
+builder.Services.AddRepositories();
+builder.Services.AddServices();
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-builder.Services.AddHealthChecks()
-	.AddSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
 
-builder.Services.AddHealthChecksUI().AddInMemoryStorage();
+builder.Services.ConfigureHealthChecks(builder.Configuration);
 
 var app = builder.Build();
 
@@ -40,17 +31,30 @@ if (app.Environment.IsDevelopment())
 {
 	app.UseSwagger();
 	app.UseSwaggerUI();
+	app.UseDeveloperExceptionPage();
+}
+else
+{
+	app.UseHsts();
 }
 
 app.UseHttpsRedirection();
 
-app.UseAuthorization();
+app.UseForwardedHeaders(new ForwardedHeadersOptions
+{
+	ForwardedHeaders = ForwardedHeaders.All
+});
 
-app.MapControllers();
+app.UseCors("CorsPolicy");
+
 app.MapHealthChecks("/healthcheck", new HealthCheckOptions
 {
 	ResponseWriter = UIResponseWriter.WriteHealthCheckUIResponse
 });
 app.MapHealthChecksUI();
+
+app.UseAuthorization();
+
+app.MapControllers();
 
 app.Run();

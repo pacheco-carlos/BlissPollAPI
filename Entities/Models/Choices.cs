@@ -1,4 +1,4 @@
-﻿namespace BlissPollAPI.Model
+﻿namespace BlissPollAPI.Entities.Models
 {
 	public class Choices
 	{

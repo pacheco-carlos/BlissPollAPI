@@ -1,6 +1,6 @@
-﻿using BlissPollAPI.Model;
+﻿using BlissPollAPI.Entities.Models;
 
-namespace BlissPollAPI.Interfaces
+namespace BlissPollAPI.Repository.Interfaces
 {
 	public interface IChoicesRepository : IRepository<Choices>
 	{
